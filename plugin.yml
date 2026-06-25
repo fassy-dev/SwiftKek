@@ -1,0 +1,338 @@
+name: SwiftKek
+version: 1.4
+main: SwiftKek
+api-version: "1.21"
+authors: [Fassykite, StrixGT]
+description: "⚡ Ultimate admin utilities for vanilla survival | Author: Fassykite | Supported by: StrixGT"
+website: https://github.com/Kek-Team/SwiftKek
+prefix: "§b⚡§dSwiftKek§b⚡"
+
+commands:
+  # ========== GAMEMODE COMMANDS ==========
+  gm:
+    description: "Сменить режим игры"
+    usage: "/<command> <0|1|2|3> [игрок]"
+    aliases: [gamemode]
+  gms:
+    description: "Режим выживания"
+    usage: "/<command>"
+  gmc:
+    description: "Режим креатива"
+    usage: "/<command>"
+  gma:
+    description: "Режим приключения"
+    usage: "/<command>"
+  gmsp:
+    description: "Режим наблюдателя"
+    usage: "/<command>"
+
+  # ========== ADMIN UTILITIES ==========
+  god:
+    description: "Режим бога (бессмертие)"
+    usage: "/<command> [игрок]"
+  vanish:
+    description: "Режим невидимости"
+    usage: "/<command>"
+  fly:
+    description: "Включить/выключить полет"
+    usage: "/<command> [игрок]"
+  noclip:
+    description: "Режим NoClip (сквозь блоки)"
+    usage: "/<command>"
+
+  # ========== TELEPORTATION ==========
+  tp:
+    description: "Телепортация"
+    usage: "/<command> <игрок> или /<command> <игрок1> <игрок2>"
+  tphere:
+    description: "Телепортировать игрока к себе"
+    usage: "/<command> <игрок>"
+  tpa:
+    description: "Запрос на телепортацию к игроку"
+    usage: "/<command> <игрок>"
+  tpaccept:
+    description: "Принять запрос на телепортацию"
+    usage: "/<command>"
+  tpahere:
+    description: "Запрос на телепортацию игрока к себе"
+    usage: "/<command> <игрок>"
+  tppos:
+    description: "Телепорт по координатам"
+    usage: "/<command> <x> <y> <z> [игрок]"
+  spawn:
+    description: "Телепорт на спавн"
+    usage: "/<command>"
+
+  # ========== HEALTH & HUNGER ==========
+  heal:
+    description: "Вылечить игрока"
+    usage: "/<command> [игрок]"
+  feed:
+    description: "Восстановить сытость"
+    usage: "/<command> [игрок]"
+
+  # ========== SPEED COMMANDS ==========
+  speed:
+    description: "Установить скорость ходьбы и полета"
+    usage: "/<command> <1-10>"
+  walkspeed:
+    description: "Установить скорость ходьбы"
+    usage: "/<command> <1-10>"
+  flyspeed:
+    description: "Установить скорость полета"
+    usage: "/<command> <1-10>"
+
+  # ========== INFORMATION ==========
+  playerlist:
+    description: "Список игроков с пингом"
+    usage: "/<command>"
+    aliases: [list, pl]
+  find:
+    description: "Найти игрока и показать информацию"
+    usage: "/<command> <игрок>"
+  gc:
+    description: "Статистика сервера"
+    usage: "/<command>"
+
+  # ========== TIME & WEATHER ==========
+  t:
+    description: "Установить время"
+    usage: "/<command> <day|night>"
+    aliases: [time]
+  w:
+    description: "Установить погоду"
+    usage: "/<command> <clear|rain|storm>"
+    aliases: [weather]
+
+  # ========== AFK SYSTEM ==========
+  afk:
+    description: "Режим AFK"
+    usage: "/<command>"
+
+  # ========== STAFF SYSTEM ==========
+  sc:
+    description: "Staff чат"
+    usage: "/<command> <сообщение>"
+    aliases: [staffchat]
+  addstaffchat:
+    description: "Добавить в staff чат"
+    usage: "/<command> [игрок]"
+  removestaffchat:
+    description: "Удалить из staff чата"
+    usage: "/<command> [игрок]"
+
+  # ========== INVENTORY COMMANDS ==========
+  enderchest:
+    description: "Открыть эндерсундук"
+    usage: "/<command> [игрок]"
+    aliases: [ec]
+  hat:
+    description: "Надеть блок на голову"
+    usage: "/<command>"
+
+  # ========== MODERATION COMMANDS ==========
+  ban:
+    description: "Забанить игрока"
+    usage: "/<command> <игрок> [причина]"
+  unban:
+    description: "Разбанить игрока"
+    usage: "/<command> <игрок>"
+  banip:
+    description: "Забанить по IP"
+    usage: "/<command> <игрок> [причина]"
+  unbanip:
+    description: "Разбанить IP"
+    usage: "/<command> <IP>"
+  kill:
+    description: "Убить себя или другого игрока"
+    usage: "/<command> [игрок]"
+
+  # ========== REPORT SYSTEM ==========
+  report:
+    description: "Пожаловаться на игрока"
+    usage: "/<command> <игрок> <причина>"
+  reports:
+    description: "Просмотр жалоб (только для стаффа)"
+    usage: "/<command>"
+
+  # ========== WORLD MANAGEMENT ==========
+  rollback:
+    description: "Откат действий игрока (CoreProtect)"
+    usage: "/<command> <игрок> [время]"
+  spawnmob:
+    description: "Заспавнить моба"
+    usage: "/<command> <моб> [кол-во]"
+
+  # ========== HELP COMMAND ==========
+  help:
+    description: "Помощь по командам SwiftKek"
+    usage: "/<command>"
+
+permissions:
+  swiftkek.*:
+    description: "Все права SwiftKek"
+    children:
+      swiftkek.gamemode.*: true
+      swiftkek.teleport.*: true
+      swiftkek.utility.*: true
+      swiftkek.admin.*: true
+      swiftkek.staff.*: true
+      swiftkek.player.*: true
+  
+  swiftkek.gamemode.*:
+    description: "Все права на смену режима игры"
+    children:
+      swiftkek.gamemode.survival: true
+      swiftkek.gamemode.creative: true
+      swiftkek.gamemode.adventure: true
+      swiftkek.gamemode.spectator: true
+      swiftkek.gamemode.others: true
+  
+  swiftkek.gamemode.survival:
+    description: "Право на режим выживания"
+    default: op
+  swiftkek.gamemode.creative:
+    description: "Право на режим креатива"
+    default: op
+  swiftkek.gamemode.adventure:
+    description: "Право на режим приключения"
+    default: op
+  swiftkek.gamemode.spectator:
+    description: "Право на режим наблюдателя"
+    default: op
+  swiftkek.gamemode.others:
+    description: "Право менять режим другим игрокам"
+    default: op
+  
+  swiftkek.teleport.*:
+    description: "Все права на телепортацию"
+    children:
+      swiftkek.teleport.self: true
+      swiftkek.teleport.others: true
+      swiftkek.teleport.tppos: true
+      swiftkek.teleport.tpa: true
+  
+  swiftkek.teleport.self:
+    description: "Право телепортироваться"
+    default: op
+  swiftkek.teleport.others:
+    description: "Право телепортировать других"
+    default: op
+  swiftkek.teleport.tppos:
+    description: "Право телепортироваться по координатам"
+    default: op
+  swiftkek.teleport.tpa:
+    description: "Право использовать TPA систему"
+    default: true
+  
+  swiftkek.utility.*:
+    description: "Все утилитарные права"
+    children:
+      swiftkek.utility.fly: true
+      swiftkek.utility.god: true
+      swiftkek.utility.vanish: true
+      swiftkek.utility.noclip: true
+      swiftkek.utility.speed: true
+      swiftkek.utility.feed: true
+      swiftkek.utility.heal: true
+      swiftkek.utility.time: true
+      swiftkek.utility.weather: true
+      swiftkek.utility.enderchest: true
+      swiftkek.utility.hat: true
+  
+  swiftkek.utility.fly:
+    description: "Право на полет"
+    default: op
+  swiftkek.utility.god:
+    description: "Право на режим бога"
+    default: op
+  swiftkek.utility.vanish:
+    description: "Право на невидимость"
+    default: op
+  swiftkek.utility.noclip:
+    description: "Право на NoClip"
+    default: op
+  swiftkek.utility.speed:
+    description: "Право менять скорость"
+    default: op
+  swiftkek.utility.feed:
+    description: "Право восстанавливать сытость"
+    default: op
+  swiftkek.utility.heal:
+    description: "Право лечить"
+    default: op
+  swiftkek.utility.time:
+    description: "Право менять время"
+    default: op
+  swiftkek.utility.weather:
+    description: "Право менять погоду"
+    default: op
+  swiftkek.utility.enderchest:
+    description: "Право открывать эндерсундук"
+    default: op
+  swiftkek.utility.hat:
+    description: "Право надевать блок на голову"
+    default: op
+  
+  swiftkek.admin.*:
+    description: "Все админ права"
+    children:
+      swiftkek.admin.ban: true
+      swiftkek.admin.kill: true
+      swiftkek.admin.spawnmob: true
+      swiftkek.admin.rollback: true
+      swiftkek.admin.see.reports: true
+  
+  swiftkek.admin.ban:
+    description: "Право банить игроков"
+    default: op
+  swiftkek.admin.kill:
+    description: "Право убивать других игроков"
+    default: op
+  swiftkek.admin.spawnmob:
+    description: "Право спавнить мобов"
+    default: op
+  swiftkek.admin.rollback:
+    description: "Право использовать откат"
+    default: op
+  swiftkek.admin.see.reports:
+    description: "Право видеть жалобы"
+    default: op
+  
+  swiftkek.staff.*:
+    description: "Все права стаффа"
+    children:
+      swiftkek.staff.chat: true
+      swiftkek.staff.vanish.see: true
+  
+  swiftkek.staff.chat:
+    description: "Право использовать staff чат"
+    default: op
+  swiftkek.staff.vanish.see:
+    description: "Право видеть невидимых игроков"
+    default: op
+  
+  swiftkek.player.*:
+    description: "Все игровые права"
+    children:
+      swiftkek.player.afk: true
+      swiftkek.player.report: true
+      swiftkek.player.list: true
+      swiftkek.player.find: true
+      swiftkek.player.gc: true
+  
+  swiftkek.player.afk:
+    description: "Право использовать AFK"
+    default: true
+  swiftkek.player.report:
+    description: "Право отправлять жалобы"
+    default: true
+  swiftkek.player.list:
+    description: "Право смотреть список игроков"
+    default: true
+  swiftkek.player.find:
+    description: "Право искать игроков"
+    default: true
+  swiftkek.player.gc:
+    description: "Право смотреть статистику сервера"
+    default: true
